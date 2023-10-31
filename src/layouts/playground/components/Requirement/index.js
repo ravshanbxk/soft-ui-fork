@@ -16,6 +16,10 @@ import PlaygroundData from "layouts/playground/data";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+import CustomerSupport from "examples/Icons/CustomerSupport";
+import team1 from "assets/images/team-1.jpg";
+import team3 from "assets/images/team-3.jpg";
+
 import {useEffect, useState, useRef} from 'react';
 
 
@@ -240,15 +244,16 @@ function Assignee({assigneeKey}){
   };
 
   return(
-    <Grid item xs={4} lg={4}>
+    <Grid item xs={3} lg={3}>
     <SoftBox pt={1} mb={0.5}>
       <SoftTypography variant="body2" color="text" fontWeight="medium">
         Assignee: {' '}
         <select className="form-select" aria-label="Default select example" id={'assignee-dropdown-' + assigneeKey} defaultValue={'Unassigned'}>
         <option value="0">Unassigned</option>
-        <option value="1">John Doe</option>
-        <option value="2">Peter Parker</option>
-        <option value="3">Oscar Piastri</option>
+        <option value="1">John Michael</option>
+        <option value="2">Laura Mitchel</option>
+        <option value="3">Laurent Perrier</option>
+        <option value="4">Travis Xavier</option>
       </select>
       </SoftTypography>
       </SoftBox>
@@ -270,14 +275,15 @@ function StatusDropdown({statusKey}){
 
   
     return(
-      <Grid item xs={4} lg={4}>
+      <Grid item xs={3} lg={3}>
       <SoftBox pt={1} mb={0.5}>
         <SoftTypography variant="body2" color="text" fontWeight="medium">
           Status: {' '}
         <select className="form-select" aria-label="Default select example" id={'status-dropdown-' + statusKey} defaultValue={'To Do'}>
-          <option value="0">In Progress</option>
-          <option value="1">In Review</option>
-          <option value="2">Done</option>
+          <option value="0">To Do</option>
+          <option value="1">In Progress</option>
+          <option value="2">In Review</option>
+          <option value="3">Done</option>
         </select>
         </SoftTypography>
 
@@ -301,7 +307,7 @@ function ApprovalLabel({ show }) {
     };
   
     return(
-      <Grid item xs={4} lg={4}>
+      <Grid item xs={3} lg={3}>
         <SoftBox pt={1} mt={3}>
           {displayApproval}
         </SoftBox>
@@ -360,6 +366,7 @@ function StatusBar({ requirementKey, showGenerated }){
   const light = false;
 
   // Render the notifications menu
+  // Render the notifications menu
   const renderMenu = () => (
     <Menu
       anchorEl={openMenu}
@@ -374,27 +381,27 @@ function StatusBar({ requirementKey, showGenerated }){
     >
       <NotificationItem
         image={<img src={team2} alt="person" />}
-        title={["New message", "from Laur"]}
-        date="13 minutes ago"
+        title={["John Michael:", "Can you guys review this answer?"]}
+        date="14:22"
         onClick={handleCloseMenu}
       />
       <NotificationItem
-        image={<img src={logoSpotify} alt="person" />}
-        title={["New album", "by Travis Scott"]}
-        date="1 day"
+        image={<img src={team1} alt="person" />}
+        title={["Laura Mitchel:", "Adding Travis in the loop"]}
+        date="14:29"
         onClick={handleCloseMenu}
       />
       <NotificationItem
         color="secondary"
-        image={
-          <Icon fontSize="small" sx={{ color: ({ palette: { white } }) => white.main }}>
-            payment
-          </Icon>
-        }
-        title={["", "Payment successfully completed"]}
-        date="2 days"
+        image={<img src={team3} alt="person" />}
+        title={["Travis Xavier:", "I approve it"]}
+        date="16:10"
         onClick={handleCloseMenu}
       />
+      <SoftInput
+                placeholder="Type here..."
+                icon={{ component: "message", direction: "left" }}
+              />
     </Menu>
   );
 
@@ -412,18 +419,24 @@ function StatusBar({ requirementKey, showGenerated }){
           <Assignee assigneeKey={requirementKey}/>
           <StatusDropdown statusKey={requirementKey}/>
           <ApprovalLabel show={showGenerated && requirementKey === 0 ? true : false} /> {/* <-- updated this line */}
-          <IconButton
-                size="small"
-                color="inherit"
-                sx={navbarIconButton}
-                aria-controls="notification-menu"
-                aria-haspopup="true"
-                variant="contained"
-                onClick={handleOpenMenu}
-              >
-                <Icon className={light ? "text-white" : "text-dark"}>notifications</Icon>
-              </IconButton>
-              {renderMenu()}
+
+          <Grid item xs={3} lg={3}>
+            <SoftBox pt={0} mt={3} pr={3} textAlign="right">
+              <IconButton
+                    size="large"
+                    color="inherit"
+                    sx={navbarIconButton}
+                    aria-controls="notification-menu"
+                    aria-haspopup="true"
+                    variant="contained"
+                    onClick={handleOpenMenu}
+                  >
+                    {/* <Icon className={light ? "text-white" : "text-dark"}>subject</Icon> */}
+                    <CustomerSupport size="27px" color="dark" />
+                  </IconButton>
+                  {renderMenu()}
+            </SoftBox>
+          </Grid>
 
           <OffCanvasLog/>
           <SaveResponseButton/>

@@ -37,7 +37,7 @@ import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 import borders from "assets/theme/base/borders";
 
-function Table({ columns, rows }) {
+function Table({ onClickFunc, columns, rows }) {
   const { light } = colors;
   const { size, fontWeightBold } = typography;
   const { borderWidth } = borders;
@@ -96,9 +96,11 @@ function Table({ columns, rows }) {
               <SoftBox mr={2}>
                 <SoftAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
               </SoftBox>
-              <SoftTypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
-                {row[name][1]}
-              </SoftTypography>
+              <div style={{'cursor': 'pointer'}} onClick={onClickFunc}>
+                <SoftTypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
+                  {row[name][1]}
+                </SoftTypography>
+              </div>
             </SoftBox>
           </SoftBox>
         );
@@ -146,12 +148,14 @@ function Table({ columns, rows }) {
 
 // Setting default values for the props of Table
 Table.defaultProps = {
+  onClickFunc: () => {},
   columns: [],
   rows: [{}],
 };
 
 // Typechecking props for the Table
 Table.propTypes = {
+  onClickFunc: PropTypes.func,
   columns: PropTypes.arrayOf(PropTypes.object),
   rows: PropTypes.arrayOf(PropTypes.object),
 };

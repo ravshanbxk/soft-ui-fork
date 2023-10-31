@@ -6,10 +6,11 @@ import SoftAvatar from "components/SoftAvatar";
 import SoftBadge from "components/SoftBadge";
 
 // Images
+import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
-
+import team5 from "assets/images/team-5.jpg";
 function Author({ image, name, email }) {
   return (
     <SoftBox display="flex" alignItems="center" px={1} py={0.5}>
@@ -46,8 +47,7 @@ const authorsTableData = {
     { name: "name", align: "center" },
     { name: "author", align: "left" },
     { name: "category", align: "left" },
-
-    { name: "employed", align: "center" },
+    { name: "edited", align: "center" },
     { name: "action", align: "center" },
   ],
 
@@ -56,9 +56,9 @@ const authorsTableData = {
       author: <Author image={team2} name="John Michael" email="john@cogniflow.org" />,
       category: <Function job="Manager" org="Organization" />,
       name: (<SoftTypography variant="button" color="black" fontWeight="bold">CogniFlow Proposals</SoftTypography>),
-      employed: (
+      edited: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
-          23/04/18
+          23/10/23
         </SoftTypography>
       ),
       action: (
@@ -74,12 +74,12 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team3} name="Alexa Liras" email="alexa@cogniflow.org" />,
+      author: <Author image={team1} name="Laura Mitchel" email="laura@cogniflow.org" />,
       category: <Function job="Security" org="InfoSec" />,
       name: (<SoftTypography variant="button" color="black" fontWeight="bold">InfoSec Knowledge</SoftTypography>),
-      employed: (
+      edited: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
-          11/01/19
+          11/10/23
         </SoftTypography>
       ),
       action: (
@@ -98,9 +98,9 @@ const authorsTableData = {
       author: <Author image={team4} name="Laurent Perrier" email="laurent@cogniflow.org" />,
       category: <Function job="EU market" org="Compliance" />,
       name: (<SoftTypography variant="button" color="black" fontWeight="bold">Product EU Compliance</SoftTypography>),
-      employed: (
+      edited: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
-          19/09/17
+          19/09/23
         </SoftTypography>
       ),
       action: (
@@ -116,12 +116,12 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team3} name="Michael Levi" email="michael@cogniflow.org" />,
+      author: <Author image={team3} name="Travis Xavier" email="travis@cogniflow.org" />,
       category: <Function job="Quality Assurance" org="Docs" />,
       name: (<SoftTypography variant="button" color="black" fontWeight="bold">Certifications </SoftTypography>),
-      employed: (
+      edited: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
-          24/12/08
+          11/09/23
         </SoftTypography>
       ),
       action: (
@@ -137,12 +137,12 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team2} name="Richard Gran" email="richard@cogniflow.org" />,
+      author: <Author image={team5} name="Lily Gran" email="lily@cogniflow.org" />,
       category: <Function job="Legal" org="Docs" />,
       name: (<SoftTypography variant="button" color="black" fontWeight="bold">Legals</SoftTypography>),
-      employed: (
+      edited: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
-          04/10/21
+          04/08/23
         </SoftTypography>
       ),
       action: (
@@ -158,12 +158,12 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team4} name="Miriam Eric" email="miriam@cogniflow.org" />,
+      author: <Author image={team2} name="John Michael" email="john@cogniflow.org" />,
       category: <Function job="PM" org="Features" />,
       name: (<SoftTypography variant="button" color="black" fontWeight="bold">Product Roadmap</SoftTypography>),
-      employed: (
+      edited: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
-          14/09/20
+          01/08/23
         </SoftTypography>
       ),
       action: (

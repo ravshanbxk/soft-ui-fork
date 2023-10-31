@@ -22,11 +22,11 @@ import projectsTableData from "layouts/tables/data/projectsTableData";
 function Playground(){
     const [showGenerated, setShowGenerated] = useState(false);
     const [showSources, setShowSources] = useState(false);
-  const { columns: prCols, rows: prRows } = projectsTableData;
+    const { columns: prCols, rows: prRows } = projectsTableData;
 
     function fillResponses() {
         setShowGenerated(true);
-        setShowSources(true);  // Add this line
+        setShowSources(true);
         
     }
 
@@ -56,11 +56,17 @@ if (showTable) {
           }}
         >
           {/* Add a click handler to the table rows */}
-          <Table columns={prCols} rows={prRows} />
+          <Table onClickFunc={()=>{setShowTable(false);}} columns={prCols} rows={prRows} />
         </SoftBox>
       </Card>
+      <SoftBox pt={1} mb={2}>
+          <SoftButton variant="gradient" color="info" fullWidth>
+              <Icon sx={{ fontWeight: "bold" }}>add</Icon>
+              &nbsp; Add Project
+          </SoftButton>
+      </SoftBox>
       {/* Adding the button here */}
-      <button onClick={() => setShowTable(false)}>Show Other View</button>
+      {/* <button onClick={() => setShowTable(false)}>Show Other View</button> */}
     </DashboardLayout>
   );
 } 
@@ -71,11 +77,18 @@ if (showTable) {
             <DashboardNavbar />
 
             <SoftBox pt={1} mb={2}>
+                <SoftButton variant="gradient" color="dark" fullWidth>
+                    <Icon sx={{ fontWeight: "bold" }}>upload</Icon>
+                    &nbsp; Export
+                </SoftButton>
+            </SoftBox>
+            <SoftBox pt={1} mb={2}>
                 <SoftButton onClick={fillResponses} variant="gradient" color="info" fullWidth>
                     <Icon sx={{ fontWeight: "bold" }}>editnote</Icon>
                     &nbsp; generate answers
                 </SoftButton>
             </SoftBox>
+            
             {requirementsComponents}
         </DashboardLayout>
     );

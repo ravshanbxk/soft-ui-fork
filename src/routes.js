@@ -68,45 +68,36 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Playground",
-    key: "playground",
-    route: "/playground",
+    name: "Projects",
+    key: "projects",
+    route: "/projects",
     icon: <Shop size="12px" />,
     component: <Playground />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
-    route: "/tables",
+    name: "Knowledge Base",
+    key: "Knowledge Base",
+    route: "/knowledge-base",
     icon: <Office size="12px" />,
     component: <Tables />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Billing",
-    key: "billing",
-    route: "/billing",
+    name: "Reports",
+    key: "Reports",
+    route: "/Reports",
     icon: <CreditCard size="12px" />,
     component: <Billing />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Virtual Reality",
-    key: "virtual-reality",
-    route: "/virtual-reality",
-    icon: <Cube size="12px" />,
-    component: <VirtualReality />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "RTL",
-    key: "rtl",
-    route: "/rtl",
+    name: "Settings",
+    key: "Settings",
+    route: "/Settings",
     icon: <Settings size="12px" />,
     component: <RTL />,
     noCollapse: true,
@@ -121,7 +112,13 @@ const routes = [
     component: <Profile />,
     noCollapse: true,
   },
-  {
+
+];
+
+export default routes;
+
+
+{/*  {
     type: "collapse",
     name: "Sign In",
     key: "sign-in",
@@ -139,6 +136,14 @@ const routes = [
     component: <SignUp />,
     noCollapse: true,
   },
-];
 
-export default routes;
+
+  {
+    type: "collapse",
+    name: "Virtual Reality",
+    key: "virtual-reality",
+    route: "/virtual-reality",
+    icon: <Cube size="12px" />,
+    component: <VirtualReality />,
+    noCollapse: true,
+  },*/}

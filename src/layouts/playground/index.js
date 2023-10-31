@@ -3,7 +3,6 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 // @mui material components
 import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
 // Soft UI Dashboard React components
@@ -17,11 +16,15 @@ import PlaygroundData from "layouts/playground/data";
 
 import {useState, useEffect} from 'react';
 
+import Table from "examples/Tables/Table";
+import projectsTableData from "layouts/tables/data/projectsTableData";
+
 function Playground(){
     const [showGenerated, setShowGenerated] = useState(false);
     const [showSources, setShowSources] = useState(false);
+  const { columns: prCols, rows: prRows } = projectsTableData;
+
     function fillResponses() {
-        console.log('clicked');
         setShowGenerated(true);
         setShowSources(true);  // Add this line
         
@@ -30,6 +33,38 @@ function Playground(){
     const requirementsComponents = PlaygroundData.questions.map(
         (question, index) => (<Requirement key={index} requirementKey={index} showGen={showGenerated} showSources={showSources} />)  // Update here
     );
+
+    // State to keep track of the selected project and view mode (table or details)
+  const [showTable, setShowTable] = useState(true);
+
+if (showTable) {
+  return (
+    <DashboardLayout>
+      <DashboardNavbar />
+      <Card>
+        <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
+          <SoftTypography variant="h6">Projects table</SoftTypography>
+        </SoftBox>
+        <SoftBox
+          sx={{
+            "& .MuiTableRow-root:not(:last-child)": {
+              "& td": {
+                borderBottom: ({ borders: { borderWidth, borderColor } }) =>
+                  `${borderWidth[1]} solid ${borderColor}`,
+              },
+            },
+          }}
+        >
+          {/* Add a click handler to the table rows */}
+          <Table columns={prCols} rows={prRows} />
+        </SoftBox>
+      </Card>
+      {/* Adding the button here */}
+      <button onClick={() => setShowTable(false)}>Show Other View</button>
+    </DashboardLayout>
+  );
+} 
+  else {
 
     return (
         <DashboardLayout>
@@ -41,11 +76,9 @@ function Playground(){
                     &nbsp; generate answers
                 </SoftButton>
             </SoftBox>
-
-            {/* <Requirement requirementKey={0} showGen={true} showSources={true} /> */}
             {requirementsComponents}
         </DashboardLayout>
     );
-}
+}}
 
 export default Playground;

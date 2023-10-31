@@ -15,6 +15,8 @@ import logoSlack from "assets/images/small-logos/logo-slack.svg";
 import logoWebDev from "assets/images/small-logos/logo-webdev.svg";
 import logoXD from "assets/images/small-logos/logo-xd.svg";
 
+
+
 function Completion({ value, color }) {
   return (
     <SoftBox display="flex" alignItems="center">
@@ -29,7 +31,7 @@ function Completion({ value, color }) {
 }
 
 const action = (
-  <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small">
+  <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small" >
     more_vert
   </Icon>
 );
@@ -37,7 +39,7 @@ const action = (
 const projectsTableData = {
   columns: [
     { name: "project", align: "left" },
-    { name: "budget", align: "left" },
+    { name: "due", align: "left" },
     { name: "status", align: "left" },
     { name: "completion", align: "center" },
     { name: "action", align: "center" },
@@ -45,10 +47,10 @@ const projectsTableData = {
 
   rows: [
     {
-      project: [logoSpotify, "Spotift"],
-      budget: (
+      project: [logoSpotify, "Spotify"],
+      due: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
-          $2,500
+          06/11/23
         </SoftTypography>
       ),
       status: (
@@ -61,9 +63,9 @@ const projectsTableData = {
     },
     {
       project: [logoInvesion, "Invesion"],
-      budget: (
+      due: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
-          $5,000
+          14/11/23
         </SoftTypography>
       ),
       status: (
@@ -76,9 +78,9 @@ const projectsTableData = {
     },
     {
       project: [logoJira, "Jira"],
-      budget: (
+      due: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
-          $3,400
+          11/11/23
         </SoftTypography>
       ),
       status: (
@@ -91,9 +93,9 @@ const projectsTableData = {
     },
     {
       project: [logoSlack, "Slack"],
-      budget: (
+      due: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
-          $1,400
+          17/09/23
         </SoftTypography>
       ),
       status: (
@@ -106,9 +108,9 @@ const projectsTableData = {
     },
     {
       project: [logoWebDev, "Webdev"],
-      budget: (
+      due: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
-          $14,000
+          12/07/23
         </SoftTypography>
       ),
       status: (
@@ -121,9 +123,9 @@ const projectsTableData = {
     },
     {
       project: [logoXD, "Adobe XD"],
-      budget: (
+      due: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
-          $2,300
+          18/09/23
         </SoftTypography>
       ),
       status: (

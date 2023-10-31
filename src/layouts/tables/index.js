@@ -15,11 +15,11 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import Card from "@mui/material/Card";
-
+import Icon from "@mui/material/Icon";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
-
+import SoftButton from "components/SoftButton";
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -32,7 +32,6 @@ import projectsTableData from "layouts/tables/data/projectsTableData";
 
 function Tables() {
   const { columns, rows } = authorsTableData;
-  const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
     <DashboardLayout>
@@ -41,7 +40,7 @@ function Tables() {
         <SoftBox mb={3}>
           <Card>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-              <SoftTypography variant="h6">Authors table</SoftTypography>
+              <SoftTypography variant="h6">Knowledge Base</SoftTypography>
             </SoftBox>
             <SoftBox
               sx={{
@@ -57,25 +56,14 @@ function Tables() {
             </SoftBox>
           </Card>
         </SoftBox>
-        <Card>
-          <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-            <SoftTypography variant="h6">Projects table</SoftTypography>
-          </SoftBox>
-          <SoftBox
-            sx={{
-              "& .MuiTableRow-root:not(:last-child)": {
-                "& td": {
-                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                    `${borderWidth[1]} solid ${borderColor}`,
-                },
-              },
-            }}
-          >
-            <Table columns={prCols} rows={prRows} />
-          </SoftBox>
-        </Card>
+        <SoftBox pt={1} mb={2}>
+                <SoftButton variant="gradient" color="info" fullWidth>
+                    <Icon sx={{ fontWeight: "bold" }}>add</Icon>
+                    &nbsp; Add Knowledge
+                </SoftButton>
+            </SoftBox>
+        
       </SoftBox>
-      <Footer />
     </DashboardLayout>
   );
 }

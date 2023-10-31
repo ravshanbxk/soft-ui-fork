@@ -162,14 +162,14 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         <SoftBox mt={2}>
           <SoftButton
             component="a"
-            href="https://creative-tim.com/product/soft-ui-dashboard-pro-react"
+            href="http://cogniflow.org"
             target="_blank"
             rel="noreferrer"
             variant="gradient"
             color={color}
             fullWidth
           >
-            upgrade to pro
+            Contact Support
           </SoftButton>
         </SoftBox>
       </SoftBox>

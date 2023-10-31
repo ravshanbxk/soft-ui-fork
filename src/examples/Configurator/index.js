@@ -95,7 +95,7 @@ function Configurator() {
         px={3}
       >
         <SoftBox>
-          <SoftTypography variant="h5">Soft UI Configurator</SoftTypography>
+          <SoftTypography variant="h5">Logs</SoftTypography>
           <SoftTypography variant="body2" color="text">
             See our dashboard options.
           </SoftTypography>
@@ -120,7 +120,7 @@ function Configurator() {
 
       <SoftBox pt={1.25} pb={3} px={3}>
         <SoftBox>
-          <SoftTypography variant="h6">Sidenav Colors</SoftTypography>
+          <SoftTypography variant="h6">Participants</SoftTypography>
 
           <SoftBox mb={0.5}>
             {sidenavColors.map((color) => (

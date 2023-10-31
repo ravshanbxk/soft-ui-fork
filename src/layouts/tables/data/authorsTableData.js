@@ -43,20 +43,19 @@ function Function({ job, org }) {
 
 const authorsTableData = {
   columns: [
+    { name: "name", align: "center" },
     { name: "author", align: "left" },
-    { name: "function", align: "left" },
-    { name: "status", align: "center" },
+    { name: "category", align: "left" },
+
     { name: "employed", align: "center" },
     { name: "action", align: "center" },
   ],
 
   rows: [
     {
-      author: <Author image={team2} name="John Michael" email="john@creative-tim.com" />,
-      function: <Function job="Manager" org="Organization" />,
-      status: (
-        <SoftBadge variant="gradient" badgeContent="online" color="success" size="xs" container />
-      ),
+      author: <Author image={team2} name="John Michael" email="john@cogniflow.org" />,
+      category: <Function job="Manager" org="Organization" />,
+      name: (<SoftTypography variant="button" color="black" fontWeight="bold">CogniFlow Proposals</SoftTypography>),
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           23/04/18
@@ -75,11 +74,9 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team3} name="Alexa Liras" email="alexa@creative-tim.com" />,
-      function: <Function job="Programator" org="Developer" />,
-      status: (
-        <SoftBadge variant="gradient" badgeContent="offline" color="secondary" size="xs" container />
-      ),
+      author: <Author image={team3} name="Alexa Liras" email="alexa@cogniflow.org" />,
+      category: <Function job="Security" org="InfoSec" />,
+      name: (<SoftTypography variant="button" color="black" fontWeight="bold">InfoSec Knowledge</SoftTypography>),
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           11/01/19
@@ -98,11 +95,9 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team4} name="Laurent Perrier" email="laurent@creative-tim.com" />,
-      function: <Function job="Executive" org="Projects" />,
-      status: (
-        <SoftBadge variant="gradient" badgeContent="online" color="success" size="xs" container />
-      ),
+      author: <Author image={team4} name="Laurent Perrier" email="laurent@cogniflow.org" />,
+      category: <Function job="EU market" org="Compliance" />,
+      name: (<SoftTypography variant="button" color="black" fontWeight="bold">Product EU Compliance</SoftTypography>),
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           19/09/17
@@ -121,11 +116,9 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team3} name="Michael Levi" email="michael@creative-tim.com" />,
-      function: <Function job="Programator" org="Developer" />,
-      status: (
-        <SoftBadge variant="gradient" badgeContent="online" color="success" size="xs" container />
-      ),
+      author: <Author image={team3} name="Michael Levi" email="michael@cogniflow.org" />,
+      category: <Function job="Quality Assurance" org="Docs" />,
+      name: (<SoftTypography variant="button" color="black" fontWeight="bold">Certifications </SoftTypography>),
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           24/12/08
@@ -144,11 +137,9 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team2} name="Richard Gran" email="richard@creative-tim.com" />,
-      function: <Function job="Manager" org="Executive" />,
-      status: (
-        <SoftBadge variant="gradient" badgeContent="offline" color="secondary" size="xs" container />
-      ),
+      author: <Author image={team2} name="Richard Gran" email="richard@cogniflow.org" />,
+      category: <Function job="Legal" org="Docs" />,
+      name: (<SoftTypography variant="button" color="black" fontWeight="bold">Legals</SoftTypography>),
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           04/10/21
@@ -167,11 +158,9 @@ const authorsTableData = {
       ),
     },
     {
-      author: <Author image={team4} name="Miriam Eric" email="miriam@creative-tim.com" />,
-      function: <Function job="Programtor" org="Developer" />,
-      status: (
-        <SoftBadge variant="gradient" badgeContent="offline" color="secondary" size="xs" container />
-      ),
+      author: <Author image={team4} name="Miriam Eric" email="miriam@cogniflow.org" />,
+      category: <Function job="PM" org="Features" />,
+      name: (<SoftTypography variant="button" color="black" fontWeight="bold">Product Roadmap</SoftTypography>),
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           14/09/20
@@ -189,6 +178,8 @@ const authorsTableData = {
         </SoftTypography>
       ),
     },
+
+
   ],
 };
 

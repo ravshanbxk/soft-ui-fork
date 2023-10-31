@@ -44,6 +44,7 @@ import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+import Playground from "layouts/playground";
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -63,6 +64,15 @@ const routes = [
     route: "/dashboard",
     icon: <Shop size="12px" />,
     component: <Dashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Playground",
+    key: "playground",
+    route: "/playground",
+    icon: <Shop size="12px" />,
+    component: <Playground />,
     noCollapse: true,
   },
   {
